@@ -7,7 +7,7 @@ class cornerBox {
         `--cornerbox-color`,
         
       ];
-    }
+    } 
 
     paint(ctx, size, props) {
       const lineBox = parseInt(props.get(`--cornerbox-line`)); 
