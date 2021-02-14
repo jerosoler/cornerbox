@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Corner Box - Css Houdini - Jero Soler</title>
+    <meta description="CSS Houdini - Corner Box - Jero Soler">
+    <script src="https://unpkg.com/css-paint-polyfill"></script>
+</head>
+<body>
+    <div class="header">
+        <h1>CornerBox</h1>
+        <h3>CSS Houdini</h3>
+    </div>
+    <div class="container">
+        <div class="box box1">
+            ¡¡ Hello cornexBox !!
+        </div>
+        <div class="box box2">
+            ¡¡ Hello cornexBox !!
+        </div>
+        <div class="box box3">
+            ¡¡ Hello cornexBox !!
+        </div>
+    </div>
+    <div class="footer">
+        <h3>Developed by Jero Soler</h3>
+    </div>
+    <style>
+        *, *::before, *::after {
+         box-sizing: border-box;
+        }
+        body {
+            height: 100vh;
+            width: 100vw;
+            margin: 0px;
+            font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,sans-serif;
+            flex-direction: column;
+        }
+        body, .container {
+            background-color: black;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            align-content: center;
+        }
+        .header, .footer {
+            height: 10vh;
+        }
+        .header {
+            color: white;
+        }
+        .header h1 {
+            font-size: 45px;
+            margin-bottom: 0px;
+            text-shadow: 0 0 3px rgb(17, 0, 252,1);
+        }
+        .header h3 {
+            margin-top: 0px;
+            text-shadow: 0 0 3px rgb(17, 0, 252,1);
+            
+        }
+        .container {
+            flex-direction: initial;
+        }
+
+        .footer {
+            color: white;
+        }
+        .footer h3 {
+            text-shadow: 0 0 3px rgb(17, 0, 252,1);
+        }
+        .box {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            align-content: center;
+            margin-left: 15px;
+            margin-right: 15px;
+            height: 100px;
+            width: 300px;
+            font-weight: bold;
+            font-size: 20px;;
+            color: white;
+            padding: 10px;
+            background-image: paint(cornerbox);
+            box-shadow: rgb(17, 0, 252,0.2) 0px 0px 100px 20px;
+            cursor: pointer;
+            
+        }
+
+        .box1 {
+            --cornerbox-color:#1100fc;
+            --cornerbox-line: 5px;
+            --cornerbox-lenght: 15px;
+            transition: --cornerbox-line 0.6s linear,  --cornerbox-lenght 0.6s linear;
+        }
+
+        .box1:hover {
+            --cornerbox-line: 10px;
+            --cornerbox-lenght: 25px;
+        }
+
+        .box3 {
+            --cornerbox-color:#ffffff;
+            --cornerbox-line: 10px;
+            --cornerbox-lenght: 10px;
+            transition: --cornerbox-lenght 0.6s linear;
+        }
+
+        .box3:hover {
+            --cornerbox-lenght: 25px;
+        }
+
+        .box2 {
+            --cornerbox-color:#ff9900;
+            --cornerbox-line: 3px;
+            --cornerbox-lenght: 25px;
+            height: 150px;
+            transition: --cornerbox-lenght 1s linear, --cornerbox-color 1s linear, --cornerbox-line 1s linear, height 1s linear;
+        }
+
+        .box2:hover {
+            --cornerbox-color:#ff0000;
+            --cornerbox-line: 10px;
+            --cornerbox-lenght: 200px;
+            height: 300px;
+            
+        }
+    </style>
+
+    <script>
+        if ('paintWorklet' in CSS && 'registerProperty' in CSS && 'CSSUnitValue' in window) {
+            CSS.registerProperty({
+                name: '--cornerbox-lenght',
+                syntax: '<length>',
+                initialValue: '10px',
+                inherits: false
+            });
+            CSS.registerProperty({
+                name: '--cornerbox-line',
+                syntax: '<length>',
+                initialValue: '10px',
+                inherits: false
+            });
+            CSS.registerProperty({
+                name: '--cornerbox-color',
+                syntax: '<color>',
+                initialValue: '#ffffff',
+                inherits: false
+            });
+
+            CSS.paintWorklet.addModule('CornerBox.js');
+        } else {
+            /*import("https://unpkg.com/css-paint-polyfill");*/
+            console.log("Not Supported");
+            alert("Not Supported");
+        }
+      </script>
+
+
+</body>
+</html>
