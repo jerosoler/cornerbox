@@ -1,0 +1,28 @@
+{
+  "name": "cornerbox",
+  "version": "0.0.1",
+  "description": "CSS Houdini CornerBox",
+  "main": "CornerBox.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jerosoler/cornerbox.git"
+  },
+  "keywords": [
+    "CSS",
+    "Houdini",
+    "conerbox",
+    "paintworklet"
+  ],
+  "author": "Jero Soler",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jerosoler/cornerbox/issues"
+  },
+  "homepage": "https://jerosoler.github.io/cornerbox/"
+}

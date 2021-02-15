@@ -1,3 +1,5 @@
+[![GitHub license](https://img.shields.io/github/license/jerosoler/cornerbox)](https://github.com/jerosoler/cornerbox/blob/main/LICENSE)
+
 # CornerBox 
 CSS Houdini library. 
 
@@ -5,6 +7,16 @@ CSS Houdini library.
 [PLAY](https://jerosoler.github.io/cornerbox/)
 
 ![Demo](https://github.com/jerosoler/cornerbox/raw/main/docs/cornerbox.png)
+
+## CDN
+```html
+<script src="https://cdn.jsdelivr.net/gh/jerosoler/cornerbox/CornerBox.js"></script>
+```
+
+## NPM 
+```bash
+npm install cornerbox
+```
 
 ## How to use
 
