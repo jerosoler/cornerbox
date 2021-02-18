@@ -95,39 +95,39 @@
 
         .box1 {
             --cornerbox-color:#1100fc;
-            --cornerbox-line: 5px;
-            --cornerbox-lenght: 15px;
-            transition: --cornerbox-line 0.6s linear,  --cornerbox-lenght 0.6s linear;
+            --cornerbox-length: 5px;
+            --cornerbox-width: 15px;
+            transition: --cornerbox-length 0.6s linear,  --cornerbox-width 0.6s linear;
         }
 
         .box1:hover {
-            --cornerbox-line: 10px;
-            --cornerbox-lenght: 25px;
+            --cornerbox-length: 10px;
+            --cornerbox-width: 25px;
         }
 
         .box3 {
             --cornerbox-color:#ffffff;
-            --cornerbox-line: 10px;
-            --cornerbox-lenght: 10px;
-            transition: --cornerbox-lenght 0.6s linear;
+            --cornerbox-length: 10px;
+            --cornerbox-width: 10px;
+            transition: --cornerbox-width 0.6s linear;
         }
 
         .box3:hover {
-            --cornerbox-lenght: 25px;
+            --cornerbox-width: 25px;
         }
 
         .box2 {
             --cornerbox-color:#ff9900;
-            --cornerbox-line: 3px;
-            --cornerbox-lenght: 25px;
+            --cornerbox-length: 3px;
+            --cornerbox-width: 25px;
             height: 150px;
-            transition: --cornerbox-lenght 1s linear, --cornerbox-color 1s linear, --cornerbox-line 1s linear, height 1s linear;
+            transition: --cornerbox-width 1s linear, --cornerbox-color 1s linear, --cornerbox-length 1s linear, height 1s linear;
         }
 
         .box2:hover {
             --cornerbox-color:#ff0000;
-            --cornerbox-line: 10px;
-            --cornerbox-lenght: 200px;
+            --cornerbox-length: 10px;
+            --cornerbox-width: 200px;
             height: 300px;
             
         }
@@ -141,13 +141,13 @@
     <script>
         if ('paintWorklet' in CSS && 'registerProperty' in CSS && 'CSSUnitValue' in window) {
             CSS.registerProperty({
-                name: '--cornerbox-lenght',
+                name: '--cornerbox-width',
                 syntax: '<length>',
                 initialValue: '10px',
                 inherits: false
             });
             CSS.registerProperty({
-                name: '--cornerbox-line',
+                name: '--cornerbox-length',
                 syntax: '<length>',
                 initialValue: '10px',
                 inherits: false

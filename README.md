@@ -26,13 +26,13 @@ Download `Cornerbox.js` file.
 ```javascript
 if ('paintWorklet' in CSS && 'registerProperty' in CSS && 'CSSUnitValue' in window) {
             CSS.registerProperty({
-                name: '--cornerbox-lenght',
+                name: '--cornerbox-width',
                 syntax: '<length>',
                 initialValue: '10px',
                 inherits: false
             });
             CSS.registerProperty({
-                name: '--cornerbox-line',
+                name: '--cornerbox-length',
                 syntax: '<length>',
                 initialValue: '10px',
                 inherits: false
@@ -55,8 +55,8 @@ if ('paintWorklet' in CSS && 'registerProperty' in CSS && 'CSSUnitValue' in wind
 ```css
 div {
     --cornerbox-color:#1100fc;
-    --cornerbox-line: 5px;
-    --cornerbox-lenght: 15px;
+    --cornerbox-width: 5px;
+    --cornerbox-length: 15px;
     background-image: paint(cornerbox);
 }
 ```
